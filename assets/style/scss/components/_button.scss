@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: $base-font;
+    font-weight: $fw-medium;
+    color: $white;
+    cursor: pointer;
+    border: none;
+    gap: 4px;
+}
+
+.btn-fs16 {
+    font-size: 16px !important;
+}
+
+.btn-primary{
+    background-color: $primary-color;
+&:active{
+    background-color: $primary-color !important;
+}
+    &:hover {
+        background-color: $primary-color;
+    }
+}
+
+
+.btn-lg {
+    padding: 14px 24px;
+    height: 40px;
+}
+
+
+.btn-xl {
+    padding: 14px 24px;
+    height: 44px;
+}

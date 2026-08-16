@@ -1,0 +1,45 @@
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.breadcrumbWrapper {
+    nav {
+      ol {
+        margin-bottom: 0;
+        .breadcrumb-item {
+          font-size: $sm-base-font;
+          font-weight: $fw-regular;
+          color: $white;
+          text-transform: capitalize;
+          + .breadcrumb-item{
+            &::before {
+              content: "\f105";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              color: $white !important;
+              font-size: $xs-base-font;
+              margin-top: 2px;
+            }
+          }
+          a {
+            color: $white;
+            text-decoration: none;
+          }
+          &.active {
+            font-size: $sm-base-font;
+            font-weight: $fw-semibold;
+            text-transform: capitalize;
+            color: $white;
+            &::before {
+              content: "\f105";
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              color: $white !important;
+              font-size: $xs-base-font;
+              margin-top: 2px;
+            }
+          }
+        }
+      }
+    }
+  }

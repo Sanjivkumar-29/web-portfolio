@@ -1,0 +1,360 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// HEADER SECTION
+#header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+    box-shadow: $light-shadow;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    
+
+    @include mac {
+        display: none;
+    }
+
+    &.shrink {
+        background: rgba(0, 0, 0, 0.85);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+        .header-menu {
+            padding: 8px 0;
+        }
+
+        .logo-link img {
+            width: 150px;
+            height: 38px;
+        }
+    }
+
+    .header-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        transition: padding 0.3s ease;
+
+        // LOGO IMAGE
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+
+            img {
+                width: 190px;
+                height: 45px;
+                object-fit: contain;
+                transition: all 0.3s ease;
+
+                @include laptop-down {
+                    width: 120px;
+                }
+            }
+        }
+
+
+        // COLLAPSE NAVIGATION
+        .navbar-nav-wrapper {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            @include laptop-down {
+                gap: 6px;
+            }
+
+            .nav-item {
+                .nav-link {
+                    font-size: $xxs-title-font;
+                    font-weight: $fw-medium;
+                    padding: 8px 15px;
+                    color: $white;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    transition: color 0.3s ease;
+
+                    @include laptop-down {
+                        font-size: $sm-base-font;
+                        padding: 6px 12px;
+                    }
+
+                    &.active,
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+
+        // CONTACT BUTTON
+        .getintouch-wrapper {
+            display: flex;
+            justify-content: flex-end;
+
+            .contact-btn {
+                font-size: $base-font;
+                font-weight: $fw-medium;
+                padding: 8px 16px;
+                color: $white;
+                background: $primary-color;
+                border-radius: 8px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+
+                @include laptop-down {
+                    font-size: 14px;
+                    padding: 6px 12px;
+                }
+
+                &:hover {
+                    background: $primary-color;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.4);
+                }
+            }
+        }
+
+
+    }
+}
+
+
+// When header becomes scrolle-header
+.scrolle-header {
+    animation: slideDown 0.4s ease forwards;
+    background: rgb(0 0 0 / 82%) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// header for samll device start
+.header--sm {
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 8px 16px;
+    box-shadow: $light-shadow;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    @include mac {
+        display: block;
+    }
+
+    .header__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo-sm__link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+
+            img {
+                width: 190px;
+                height: 45px;
+                object-fit: contain;
+                transition: all 0.3s ease;
+
+                @include laptop-down {
+                    width: 120px;
+                }
+            }
+        }
+
+        .offcanvas-link {
+            display: flex;
+            font-size: $lg-title-font;
+            width: 28px;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+
+            .nav-icon__sm {
+                color: $white;
+            }
+        }
+
+        .offcanvas-content__wrapper {
+            height: 100vh;
+            background: $black-600;
+
+            .offcanvas-header {
+                box-shadow: $light-shadow;
+
+                .header-button {
+                    background: none;
+
+                    &:focus {
+                        box-shadow: none !important;
+                        outline: none !important;
+                        opacity: 1 !important;
+                    }
+
+                    .cross-icon {
+                        width: 28px;
+                        font-size: $lg-title-font;
+                        height: 28px;
+                        color: $white !important;
+                    }
+
+                }
+
+                .btn-close {
+                    opacity: 1 !important;
+                }
+            }
+
+            // offcanvas-content__wrapper
+            .offcanvas-content__wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: column;
+                gap: 24px;
+                padding: 0;
+                margin: 0;
+
+                .offcanvas-profile {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .profile-link {
+                        display: block;
+                        text-decoration: none;
+                        cursor: pointer;
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                        border: 5px solid $black-300;
+                        margin-bottom: 12px;
+                        overflow: hidden;
+                        box-sizing: border-box;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                    .name-title {
+                        font-size: 15px;
+                        font-weight: $fw-medium;
+                        color: $white;
+                        margin-bottom: 8px;
+                    }
+
+                    .sub-name__title {
+                        font-size: $base-font;
+                        font-weight: $fw-medium;
+                        color: $white;
+                        margin: 0;
+                    }
+                }
+
+
+                // offcanvas sm-nav link
+                .sm-nav-wrapper {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 10px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    .nav-item {
+                        .nav-link {
+                            font-size: 15px;
+                            font-weight: $fw-medium;
+                            padding: 8px 15px;
+                            color: $white;
+                            text-decoration: none;
+                            white-space: nowrap;
+                            transition: color 0.3s ease;
+
+                            &.active,
+                            &:hover {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+
+                // offcanvas footer section
+                .sm-social__media {
+                    display: flex;
+                    align-items: center;
+                    gap: 18px;
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+
+                    .social-media_list {
+                        display: flex;
+
+                        .social-media_link {
+                            width: 38px;
+                            height: 38px;
+                            background: #272626;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-decoration: none;
+                            transition: 0.3s ease;
+
+
+                            .media-icon {
+                                font-size: 1.2em;
+                                color: $white;
+                                transition: 0.3s ease;
+                            }
+
+                            :hover .media-icon {
+                                color: $white;
+                            }
+
+                        }
+
+                        :hover {
+                            background: $primary-color;
+                            transform: translateY(-3px);
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+// header for samll device end

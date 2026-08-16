@@ -1,0 +1,119 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+$custom-gap: (
+  "gap-4": 4px,
+  "gap-6": 6px,
+  "gap-8": 8px,
+  "gap-10" :10px,
+  "gap-12" :12px,
+  "gap-14" :14px,
+  "gap-16": 16px,
+  "gap-24": 24px,
+  "gap-32": 32px,
+  "gap-64": 64px,
+  "gap-80" : 80px,
+);
+
+@each $name,
+$value in $custom-gap {
+  .#{$name} {
+    gap: $value !important;
+  }
+}
+
+//border-radius utility - just add value in array
+$custom-border-radius: (
+  "br-0" : 0px,
+  "br-4":4px,
+  "br-6": 6px,
+  "br-8": 8px,
+  "br-12": 12px,
+  "br-16": 16px,
+  "br-24": 24px,
+  "br-32": 32px,
+  "br-64": 64px,
+);
+
+@each $name,
+$value in $custom-border-radius {
+  .#{$name} {
+    border-radius: $value !important;
+  }
+}
+
+$custom-margin-bottom: (
+  "mb-0" : 0px,
+  "mb-4":4px,
+  "mb-6": 6px,
+  "mb-8": 8px,
+  "mb-12": 12px,
+  "mb-16": 16px,
+  "mb-20" :20px,
+  "mb-24": 24px,
+  "mb-32": 32px,
+  "mb-64": 64px,
+);
+
+@each $name,
+$value in $custom-margin-bottom {
+  .#{$name} {
+    margin-bottom: $value !important;
+  }
+}
+
+$colors: (
+  "white": $white,
+  "secondary": $seconday-color,
+  "primary": $primary-color,
+  "light-blue-200": $light-blue-200,
+  "light-blue-300": $light-blue-300,
+  "black-200": $black-200,
+  "black-300": $black-300,
+  "black-400": $black-400,
+  "black-500": $black-500,
+  "black-600": $black-600,
+  "black-800": $black-800,
+  "light-grey": $light-grey,
+  "grey-200": $grey-200,
+);
+
+@each $name, $value in $colors {
+  .text-#{$name} {
+    color: $value !important;
+  }
+
+  .bg-#{$name} {
+    background-color: $value !important;
+  }
+}
+
+
+
+.container {
+  @include laptop-up{
+    max-width: 1240px ;
+    margin: 0 auto ;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  @include laptop-down{
+    max-width: 1240px ;
+    margin: 0 auto ;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+}
+.section-padding{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  @include tablet{
+    padding-top: 64px;
+  padding-bottom: 64px;
+  }
+  @include mobile{
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+}

@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.form-control--lg {
+    background: #FFF;
+    color: $black-500;
+    font-size: $base-font;
+    height: 52px !important;
+    border: 0;
+    &::placeholder {
+      color: $black-500;
+    }
+  
+    &:focus {
+      box-shadow: none;
+      outline: none;
+      border: $gray-border;
+  
+    }
+}
+.form-control--sm {
+    border:$gray-border;
+    background: #FFF;
+    color: $black-500;
+    font-size: $base-font;
+    height: 46px !important;
+    &::placeholder {
+      color: $black-500;
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+      border: $gray-border;
+  
+    }
+}
+  
+  
+.form-select--lg{
+    height: 52px !important;
+    border: 0 !important;
+    font-size: $base-font;
+    color: $black-500;
+    background: #FFF;
+    &::placeholder {
+      color: $black-500;
+    }
+    &:focus {
+      box-shadow: none;
+      outline: none;
+     
+  
+    }
+}

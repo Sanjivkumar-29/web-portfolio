@@ -1,0 +1,237 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// banner section
+.banner {
+  position: relative;
+  min-height: 80vh;
+  overflow: hidden;
+
+  @include mac {
+    min-height: 70vh;
+  }
+
+  @include mobile {
+    min-height: 60vh;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    animation: bannerImageMove 24s ease-in-out infinite alternate;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: $light-shadow;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 80px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+
+    @include mac {
+      padding: 0 62px;
+      min-height: 70vh;
+    }
+
+    @include mobile {
+      min-height: 60vh;
+       padding: 0 28px;
+    }
+  }
+
+  &__content {
+    max-width: 720px;
+    color: $white;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: $heading-font;
+    font-weight: $fw-bold;
+    line-height: 1.1;
+    @include laptop-down{
+      font-family: $subheading-font;
+    }
+
+    @include mac {
+      font-size: $xxl-title-font;
+    }
+
+    @include mobile {
+      font-size: $sm-title-font;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__accent {
+    color: $seconday-color;
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    font-size: $xxs-title-font;
+
+    @include laptop-down{
+      font-size: $base-font;
+    }
+
+    @include mac {
+      font-size: 15px;
+    }
+
+    @include mobile {
+      font-size: $sm-base-font;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__name {
+    font-weight: $fw-semibold;
+    color: $white;
+  }
+
+  &__role {
+    color: #d1d5db;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: $base-font;
+    border: 2px solid $primary-color;
+    border-radius: 6px;
+    background: $primary-color;
+    color: $black-800;
+    font-weight: $fw-semibold;
+    text-decoration: none;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    @include mac {
+      padding: 10px 16px;
+      font-size: 15px;
+      font-weight: $fw-medium;
+    }
+
+    @include mobile {
+      padding: 8px 12px;
+      font-size: $sm-base-font;
+    }
+  }
+}
+
+// star animation
+.banner__bg::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.9;
+
+  box-shadow:
+    120px -80px #fff,
+    -140px 60px #fff,
+    180px 140px #fff,
+    -200px -120px #fff,
+    260px -40px #fff,
+    -280px 180px #fff,
+    320px 40px #fff,
+    -340px -200px #fff,
+    80px 260px #fff,
+    -60px -280px #fff;
+
+  animation: orbitOne 25s linear infinite;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.6;
+
+  box-shadow:
+    220px 0 #ffd966,
+    -220px 20px #fff,
+    0 240px #fff,
+    0 -240px #fff,
+    160px -180px #fff,
+    -180px 160px #fff,
+    300px 120px #fff,
+    -300px -100px #fff;
+
+  animation: orbitTwo 40s linear infinite reverse;
+}
+
+@keyframes orbitOne {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbitTwo {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+
+// animation keyframes for banner__image
+
+@keyframes bannerImageMove {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  50% {
+    transform: scale(1.05) translate(-1%, -1%);
+  }
+
+  100% {
+    transform: scale(1.1) translate(1%, 1%);
+  }
+}

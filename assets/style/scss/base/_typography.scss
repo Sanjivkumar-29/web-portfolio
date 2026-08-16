@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main-heading{
+    @include typography($subheading-font,$fw-bold,1.5);
+    @include tablet{
+        @include typography($xxl-title-font, $fw-bold, 1.4);
+    }
+    @include mobile{
+        @include typography($xl-title-font, $fw-bold, 1.4);
+    }
+}
+.section-heading--lg{
+    @include typography($xxl-title-font, $fw-bold, 54px);
+    @include tablet{
+        @include typography($xl-title-font, $fw-bold, 1.4);
+    }
+    @include mobile{
+        @include typography($lg-title-font, $fw-bold, 1.4);
+    }
+}
+.section-heading{
+    @include typography($xl-title-font, $fw-bold, 48px);
+    @include tablet{
+        @include typography($lg-title-font, $fw-bold, 1.4);
+    }
+    @include mobile{
+        @include typography($md-title-font, $fw-bold, 1.4);
+    }
+}
+.section-subheading{
+    @include typography($md-title-font, $fw-bold, 36px);
+    @include tablet{
+        @include typography($sm-title-font, $fw-bold, 1.4);
+    }
+}
+.section-title--sm{
+    @include typography($xs-title-font, $fw-bold, 30px);
+    @include tablet{
+        @include typography($xxs-title-font, $fw-bold, 1.4);
+    }
+}
+
+
