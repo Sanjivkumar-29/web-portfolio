@@ -1,0 +1,317 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Resume section Start
+.resume-section__wrapper {
+    .resume-title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #dee3e4;
+        z-index: 11;
+        padding: 16px 0;
+
+
+        h2 {
+            font-size: 56px;
+            font-weight: 900;
+            color: $black-800;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+
+            span {
+                color: $primary-color;
+            }
+
+            @include mac {
+                font-size: $heading-font;
+            }
+
+            @include tablet {
+                font-size: $xxl-title-font;
+
+            }
+
+            @include mobile {
+                font-size: $md-title-font;
+                line-height: 1.2;
+            }
+        }
+
+        .title-bg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 110px;
+            font-weight: 800;
+            letter-spacing: 10px;
+            line-height: 0.7;
+            text-transform: uppercase;
+            color: $black-400;
+            opacity: 0.35;
+            z-index: -1;
+            pointer-events: none;
+
+            @include mac {
+                font-size: 92px;
+                letter-spacing: 6px;
+            }
+
+            @include tablet {
+                font-size: 68px;
+                letter-spacing: 4px;
+            }
+
+            @include mobile {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .education-wrapper {
+        .education-title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #1E1F24;
+            margin-bottom: 22px;
+
+            @include mobile {
+                font-size: 22px;
+            }
+        }
+
+        .background-container {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-sizing: border-box;
+            border: 1px solid $black-400;
+            border-radius: 12px;
+
+            .date-badge {
+                display: inline-block;
+                line-height: 1;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: baseline;
+                background-color: $primary-color;
+                border: none;
+                border-radius: 6px;
+                font-size: 12px;
+                padding: 8px;
+                margin-bottom: 1rem;
+                font-weight: 400;
+                color: $white;
+                margin-top: 0;
+
+                @include mobile {
+                    margin-bottom: 12px;
+                }
+            }
+
+            .box-title {
+                font-size: 22px;
+                font-weight: 500;
+                color: $black-800;
+                margin-top: 0;
+                margin-bottom: 8px;
+                line-height: 1.2;
+
+                @include mobile {
+                    font-size: 20px;
+                }
+
+            }
+
+            .box-sub-title {
+                display: inline-block;
+                line-height: 1.8;
+                margin-top: 0;
+                margin-bottom: 1rem;
+                color: $black-800;
+                font-size: 16px;
+
+                @include mobile {
+                    font-size: 14px;
+                }
+            }
+
+            .box-description {
+                margin: o;
+                line-height: 1.8;
+                color: $light-grey;
+                font-size: 16px;
+                font-weight: 400;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+                @include mobile {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    // resume skills slider
+    .resume-skill__wrapper {
+        padding: 32px 0px;
+        margin: 0;
+
+        .skill-title__box {
+            display: block;
+            text-align: center;
+
+            .skill-title {
+                text-align: center;
+                font-size: 36px;
+                margin-bottom: 10px;
+                font-weight: 600;
+
+                @include tablet {
+                    font-size: 32px;
+                }
+
+                @include mobile {
+                    font-size: 24px;
+                }
+
+
+            }
+
+            .skill-subtitle {
+                text-align: center;
+                color: $light-grey;
+                margin: 0;
+                font-size: 15px;
+                font-weight: 400;
+
+                @include mobile {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .skills-carousel {
+            .skill-card {
+                background: $black-300;
+                padding: 22px;
+                border-radius: 16px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+                text-align: center;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-8px);
+                }
+
+                .image-wrpper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: auto;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+
+                img {
+                    width: 60px;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    object-position: center;
+                    object-fit: cover;
+
+                    @include tablet {
+                        width: 48px;
+                    }
+
+                    @include mobile {
+                        width: 38px;
+                    }
+                }
+
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    color: #111;
+
+                    @include tablet {
+                        font-size: 16px;
+                    }
+
+                    @include mobile {
+                        font-size: 14px;
+                    }
+                }
+
+                .progress {
+                    width: 100%;
+                    height: 8px;
+                    background: $light-grey;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    direction: ltr;
+                }
+
+                .progress span {
+                    display: block;
+                    height: 100%;
+                    background: linear-gradient(to right, #6366f1, #38BDF8);
+                    border-radius: 10px;
+                    transform-origin: left !important;
+                }
+
+
+            }
+
+            .owl-stage-outer {
+                padding: 32px 0;
+            }
+
+            .owl-dots {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button.owl-dot {
+                    background: transparent;
+                    border: none;
+                    padding: 0;
+                    margin: 0 4px;
+
+                    span {
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        background-color: $light-grey;
+                        border-radius: 50%;
+                        transition: all 0.3s ease;
+                    }
+
+                    &:hover span {
+                        width: 22px;
+                        border-radius: 10px;
+                        background-color: $primary-color;
+                    }
+
+                    &.active span {
+                        width: 22px;
+                        border-radius: 10px;
+                        background-color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Resume section End
