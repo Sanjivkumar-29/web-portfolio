@@ -14,7 +14,7 @@ $(document).ready(function () {
 
 // about section read more and less 
 $(document).ready(function () {
-  var container = $('.about-description--wrapper');
+  var container = $('.text-box');
   var btn = $('.toggle--btn');
   var fullHeight = container.outerHeight(true);
 
