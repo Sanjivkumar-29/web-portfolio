@@ -9,6 +9,7 @@
     font-family: 'Poppins', sans-serif;
     width: 100%;
     overflow: hidden;
+    background: $black-200;
 
     .service--title {
         position: relative;
@@ -87,15 +88,20 @@
         padding-top: 24px;
 
         .service-content {
-            font-size: 16px;
-            font-weight: 400;
-            color: $light-grey;
+            font-size: $base-font;
+            font-weight: $fw-regular;
+            color: $black-500;
             line-height: 1.2;
-            padding: 0;
+            padding: 32px 0;
             margin: 0;
+            overflow: hidden;
+
+            @include tablet {
+                font-size: 15px;
+            }
 
             @include mobile {
-                font-size: 15px;
+                font-size: $sm-base-font;
             }
         }
     }
@@ -134,9 +140,15 @@
                     justify-content: center;
                     text-align: center;
 
+                      @include tablet {
+                        width: 92px;
+                        height: 92px;
+                        font-size: 38px;
+                    }
+
                     @include mobile {
-                        width: 85px;
-                        height: 85px;
+                        width: 84px;
+                        height: 84px;
                         font-size: 36px;
                     }
                 }
@@ -147,19 +159,19 @@
                 padding: 0;
 
                 .feature-title {
-                    font-size: 16px;
+                    font-size: $xxs-title-font;
                     color: $black-800;
                     margin-bottom: 14px;
-                    font-weight: 700;
+                    font-weight: $fw-semibold;
 
                     @include mobile {
-                        font-size: 15px;
+                        font-size: 16px;
                     }
                 }
 
                 .feature-content {
                     font-size: 16px;
-                    color: $light-grey;
+                    color: $black-500;
                     font-weight: 400;
                     margin: 0 0 25px;
                     font-weight: 400;
@@ -169,8 +181,11 @@
                     overflow: hidden;
                     color: #80828D;
 
-                    @include mobile {
+                    @include tablet {
                         font-size: 15px;
+                    }
+                    @include mobile {
+                        font-size: $sm-base-font;
                     }
 
                 }
