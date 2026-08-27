@@ -14,12 +14,16 @@
 
 // layout
 @use "./layout/header";
+@use "./layout/footer";
 
 // pages
 @use "./pages/banner";
 @use "./pages/about";
 @use "./pages/summary";
 @use "./pages/mywork";
+@use "./pages/service";
+@use "./pages/testimonial";
+@use "./pages/contact";
 
 // responsive
 @use "./responsive/responsive";

@@ -1,0 +1,293 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+
+// Service section start
+.service-section__wrapper {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    overflow: hidden;
+
+    .service--title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #dee3e4;
+        z-index: 11;
+        padding: 16px 0;
+
+        h2 {
+            font-size: 56px;
+            font-weight: 900;
+            color: $black-800;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+
+            span {
+                color: $primary-color;
+            }
+
+            @include mac {
+                font-size: $heading-font;
+            }
+
+            @include tablet {
+                font-size: $xxl-title-font;
+
+            }
+
+            @include mobile {
+                font-size: $md-title-font;
+                line-height: 1.2;
+            }
+        }
+
+        .title-bg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 110px;
+            font-weight: 800;
+            letter-spacing: 10px;
+            line-height: 0.7;
+            text-transform: uppercase;
+            color: $black-400;
+            opacity: 0.35;
+            z-index: -1;
+            pointer-events: none;
+
+            @include mac {
+                font-size: 92px;
+                letter-spacing: 6px;
+            }
+
+            @include tablet {
+                font-size: 68px;
+                letter-spacing: 4px;
+            }
+
+            @include mobile {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .content-title {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        padding-top: 24px;
+
+        .service-content {
+            font-size: 16px;
+            font-weight: 400;
+            color: $light-grey;
+            line-height: 1.2;
+            padding: 0;
+            margin: 0;
+
+            @include mobile {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .feature-box__wrapper {
+        padding-top: 42px;
+
+        .feature-box {
+            width: 100%;
+            padding: 35px 48px;
+            text-align: center;
+            z-index: 1;
+            background: $black-200;
+            border-radius: 5px;
+            box-shadow: 0px 1px 27px -3px rgb(0, 0, 0, 0.2);
+
+            .icon-box__wrapper {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                transition: ease all 0.3s;
+
+                .box-icon {
+                    font-size: 40px;
+                    color: $white;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    margin-bottom: 30px;
+                    background: $primary-color;
+                    transition: ease all 0.3s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+
+                    @include mobile {
+                        width: 85px;
+                        height: 85px;
+                        font-size: 36px;
+                    }
+                }
+            }
+
+            .feature-content {
+                margin: 0;
+                padding: 0;
+
+                .feature-title {
+                    font-size: 16px;
+                    color: $black-800;
+                    margin-bottom: 14px;
+                    font-weight: 700;
+
+                    @include mobile {
+                        font-size: 15px;
+                    }
+                }
+
+                .feature-content {
+                    font-size: 16px;
+                    color: $light-grey;
+                    font-weight: 400;
+                    margin: 0 0 25px;
+                    font-weight: 400;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    color: #80828D;
+
+                    @include mobile {
+                        font-size: 15px;
+                    }
+
+                }
+            }
+
+            .read-more {
+                display: inline-block;
+
+                &__btn {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 3px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    line-height: 1.4;
+                    color: $black-800;
+                    text-decoration: none;
+                    padding: 4px 6px;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $primary-color;
+
+                        .read-more__icon {
+                            transform: rotate(-45deg);
+                            color: $primary-color;
+                        }
+                    }
+                }
+
+                &__icon {
+                    font-size: 18px;
+                    color: $primary-color;
+                    transition: transform 0.3s ease, color 0.3s ease;
+                }
+            }
+
+            // model start
+            .model-service__content {
+                width: 100%;
+                margin: 0;
+                background-color: $white;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+                padding: 0;
+
+                .model-service__imgbox {
+                    display: block;
+                    border-radius: 12px;
+                    width: 100%;
+                    height: auto;
+
+                    img {
+                        object-fit: cover;
+                        object-position: center;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        border-radius: 12px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    }
+                }
+
+                .service-text {
+                    padding: 24px 24px 0 24px;
+
+                    .intro {
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: $fw-regular;
+                        color: $black-500;
+                        line-height: 1.5;
+                        margin-bottom: 0;
+                        padding-bottom: 16px;
+                    }
+
+                    .features {
+                        padding-bottom: 16px;
+                        border-radius: 12px;
+
+                        h3 {
+                            font-size: 1rem;
+                            font-weight: $fw-semibold;
+                            color: $black-800;
+                            text-align: center;
+                            margin-bottom: 1rem;
+                        }
+
+                        .list-wrapper {
+                            list-style: disc;
+                            padding-left: 1.5rem;
+                            margin: 0;
+                            text-align: start;
+
+                            .list {
+                                font-size: 14px;
+                                color: $black-500;
+                                font-weight: 400;
+                                line-height: 1.6;
+                                margin-bottom: 0.6rem;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            // model end
+
+
+        }
+    }
+}
+
+// Service section end

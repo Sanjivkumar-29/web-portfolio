@@ -1,0 +1,157 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+// Testimonial section start
+.testimonial-section__wrapper {
+    .testimonial--title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #dee3e4;
+        z-index: 11;
+        padding: 16px 0;
+
+        h2 {
+            font-size: 56px;
+            font-weight: 900;
+            color: $black-800;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+
+            span {
+                color: $primary-color;
+            }
+
+            @include mac {
+                font-size: $heading-font;
+            }
+
+            @include tablet {
+                font-size: $xxl-title-font;
+
+            }
+
+            @include mobile {
+                font-size: $md-title-font;
+                line-height: 1.2;
+            }
+        }
+
+        .title-bg {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 110px;
+            font-weight: 800;
+            letter-spacing: 10px;
+            line-height: 0.7;
+            text-transform: uppercase;
+            color: $black-400;
+            opacity: 0.35;
+            z-index: -1;
+            pointer-events: none;
+
+            @include mac {
+                font-size: 92px;
+                letter-spacing: 6px;
+            }
+
+            @include tablet {
+                font-size: 68px;
+                letter-spacing: 4px;
+            }
+
+            @include mobile {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .testimonial-content p {
+        font-size: 16px;
+        font-weight: 400;
+        color: $light-grey;
+        line-height: 1.2;
+        text-align: center;
+        padding: 32px 0;
+        margin: 0;
+
+        @include mobile {
+            font-size: 15px;
+        }
+    }
+
+    .testimonial-col {
+        padding: 60px 16px;
+        background: $white;
+        position: relative;
+        margin: 50px 20px 20px 20px;
+        box-shadow: 0px 1px 27px -3px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        text-align: center;
+
+        .image-wrapper {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            top: -40px;
+            left: 0;
+            overflow: hidden;
+            border: 5px solid #fff;
+            box-shadow: -1px -4px 16px -3px rgba(0, 0, 0, 0.43);
+            right: 0;
+            margin: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+                object-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .review-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: $black-800;
+
+            @include mobile {
+                font-size: 15px;
+            }
+        }
+
+        .review-content {
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            color: $light-grey;
+
+            @include mobile {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .owl-theme .owl-dots .owl-dot.active span,
+    .owl-theme .owl-dots .owl-dot:hover span {
+        width: 22px;
+        background-color: $primary-color;
+    }
+}
+
+// Testimonial section end
