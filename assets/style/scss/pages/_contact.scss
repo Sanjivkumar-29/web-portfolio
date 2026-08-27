@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-
+// Contact section start
 
 .contact-section_wrapper {
     width: 100%;
@@ -89,17 +89,23 @@
             padding: 0 !important;
 
             .address-title {
-                font-size: 26px;
-                font-weight: 600;
+                font-size: $md-title-font;
+                font-weight: $fw-semibold;
                 text-transform: uppercase;
                 margin-bottom: 0;
                 padding-bottom: 1rem;
                 line-height: 1.2;
-                color: #272626;
+                color: $black-800;
                 text-align: left;
 
-                @include mobile {
+                @include tablet {
                     font-size: $sm-title-font;
+                    padding-bottom: 14px;
+
+                }
+
+                @include mobile {
+                    font-size: $xs-title-font;
                     padding-bottom: 12px;
                 }
 
@@ -107,17 +113,22 @@
 
             .local-address {
                 display: block;
-                font-size: 16px;
-                font-weight: 600;
+                font-size: $xxs-title-font;
+                font-weight: $fw-medium;
                 font-family: sans-serif;
-                color: $light-grey;
+                color: $black-500;
                 line-height: 1.5;
                 margin-bottom: 16px;
                 box-sizing: border-box;
                 text-align: left;
 
+                @include tablet {
+                    font-size: 1rem;
+                    margin-bottom: 14px;
+                }
+
                 @include mobile {
-                    font-size: $sm-base-font;
+                    font-size: $base-font;
                     margin-bottom: 12px;
                 }
 
@@ -125,15 +136,20 @@
 
             .mail-address {
                 position: relative;
-                font-weight: 600;
-                font-size: 16px;
+                font-weight: $fw-medium;
+                font-size: $base-font;
                 font-family: sans-serif;
                 margin-top: 0;
                 padding-left: 50px;
                 line-height: 1.5;
                 margin-bottom: 16px;
                 text-align: left;
-                color: $light-grey;
+                color: $black-500;
+
+                @include tablet {
+                    font-size: 15px;
+                    margin-bottom: 14px;
+                }
 
                 @include mobile {
                     font-size: $sm-base-font;
@@ -147,6 +163,14 @@
                     font-size: 42px;
                     display: inline-block;
                     color: $primary-color;
+
+                    @include tablet {
+                        font-size: 38px;
+                    }
+
+                    @include mobile {
+                        font-size: 36px;
+                    }
 
                     ::before {
                         content: "";
@@ -163,14 +187,20 @@
 
             .calling-address {
                 position: relative;
-                font-size: 16px;
-                font-weight: 600;
+                font-weight: $fw-medium;
+                font-size: $base-font;
                 font-family: sans-serif;
+                margin-top: 0;
                 padding-left: 50px;
                 line-height: 1.5;
                 margin-bottom: 16px;
                 text-align: left;
-                color: $light-grey;
+                color: $black-500;
+
+                @include tablet {
+                    font-size: 15px;
+                    margin-bottom: 14px;
+                }
 
                 @include mobile {
                     font-size: $sm-base-font;
@@ -180,9 +210,18 @@
                 .call-icon {
                     position: absolute;
                     left: 0;
+                    top: 10px;
                     font-size: 42px;
                     display: inline-block;
                     color: $primary-color;
+
+                    @include tablet {
+                        font-size: 38px;
+                    }
+
+                    @include mobile {
+                        font-size: 36px;
+                    }
 
                     ::before {
                         content: "";
@@ -211,13 +250,18 @@
                     .social-media_link {
                         width: 42px;
                         height: 42px;
-                        background: #272626;
+                        background: $black-600;
                         border-radius: 50%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         text-decoration: none;
                         transition: 0.3s ease;
+
+                        @include tablet {
+                            width: 38px;
+                            height: 38px;
+                        }
 
                         @include mobile {
                             width: 36px;
@@ -226,7 +270,7 @@
 
 
                         .media-icon {
-                            font-size: 1.2em;
+                            font-size: $xxs-title-font;
                             color: $white;
                             transition: 0.3s ease;
 
@@ -255,17 +299,23 @@
             padding: 0 !important;
 
             .address-title {
-                font-size: 26px;
-                font-weight: 600;
+               font-size: $md-title-font;
+                font-weight: $fw-semibold;
                 text-transform: uppercase;
                 margin-bottom: 0;
                 padding-bottom: 1rem;
                 line-height: 1.2;
-                color: #272626;
+                color: $black-800;
                 text-align: left;
 
-                @include mobile {
+                @include tablet {
                     font-size: $sm-title-font;
+                    padding-bottom: 14px;
+
+                }
+
+                @include mobile {
+                    font-size: $xs-title-font;
                     padding-bottom: 12px;
                 }
 
@@ -310,7 +360,7 @@
                 }
 
                 .form-control::placeholder {
-                    color: $light-grey;
+                    color: $black-500;
                     opacity: 0.9;
 
                     &:hover {
@@ -336,17 +386,22 @@
                     position: relative;
                     z-index: 1;
                     padding: 16px 70px 16px 35px;
-                    font-size: 15px;
-                    font-weight: 600;
-                    color: #272626;
+                    font-size: $base-font;
+                    font-weight: $fw-medium;
+                    color: $black-800;
                     background-color: transparent;
                     outline: none !important;
                     margin: auto;
                     border: 1px solid $primary-color;
 
+                    @include tablet {
+                        padding: 14px 60px 12px 32px;
+                        font-size: 14px;
+                    }
+
                     @include mobile {
-                        padding: 12px 60px 12px 30px;
-                        font-size: 13px;
+                        padding: 12px 56px 12px 30px;
+                        font-size: 12px;
                     }
 
                     &::before {
@@ -397,18 +452,28 @@
                         border-radius: 50%;
                         background: $primary-color;
 
+                        @include tablet {
+                            width: 48px;
+                            height: 48px;
+                        }
+
                         @include mobile {
-                            width: 44px;
-                            height: 44px;
+                            width: 42px;
+                            height: 42px;
                         }
 
                         &::before {
                             content: "";
                             background-size: contain;
                             background-repeat: no-repeat;
-                            width: 23px;
-                            height: 22px;
+                            width: 24px;
+                            height: 24px;
                             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.2em' height='1.2em' viewBox='0 0 24 24'%3E%3Cg fill='none'%3E%3Cpath d='m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23fff' d='m21.433 4.861l-6 15.5a1 1 0 0 1-1.624.362l-3.382-3.235l-2.074 2.073a.5.5 0 0 1-.853-.354v-4.519L2.309 9.723a1 1 0 0 1 .442-1.691l17.5-4.5a1 1 0 0 1 1.181 1.329ZM19 6.001L8.032 13.152l1.735 1.66L19 6Z'/%3E%3C/g%3E%3C/svg%3E");
+
+                             @include mobile {
+                                width: 20px;
+                                height: 20px;
+                            }
 
                             @include mobile {
                                 width: 18px;
@@ -423,3 +488,5 @@
         }
     }
 }
+
+// Contact section End
